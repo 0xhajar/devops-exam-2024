@@ -39,11 +39,13 @@ try {
     checkButton.addEventListener('click', () => {
         const validationResult = isValid(gamerTagValue);
         // TODO : Define the correct error message regarding the validation rules
-        feedbackMessage.textContent = validationResult
+        feedbackMessage.textContent = validationResult;
         // ----------------------------------------------------------------------
         body.setAttribute(
             'style',
-            validationResult === 'Gamer tag is valid' ? greenBackgroundColor : redBackgroundColor
+            validationResult === 'Gamer tag is valid'
+                ? greenBackgroundColor
+                : redBackgroundColor
         );
     });
 
