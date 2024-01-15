@@ -1,6 +1,6 @@
 name: Hajar Haouat
 on:
-  push:
+  merge_request:
     branches:
       - main
   pull_request:
