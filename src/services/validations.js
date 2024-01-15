@@ -8,7 +8,11 @@ const isValid = (gamertag) => {
          gamertag.includes('§') || 
          gamertag.includes('à') || 
          gamertag.includes('_'))) {
-        return true;
+            for(let i = 0; i < gamertag.length; i++) {
+                if(!isNaN(gamertag[i])) {
+                    return true;
+                }
+            }
     }
     return false;
 };

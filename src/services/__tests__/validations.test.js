@@ -16,6 +16,9 @@ describe('validations tests suites - isValid', () => {
         const result = isValid("test12345&");
         expect(result).toBe(true);
     });
+
+    test('should return true or false as the gamertag contains at least one number', () => {
+        const result = isValid("testtttt&");
+        expect(result).toBe(false);
+    });
 });
-
-
