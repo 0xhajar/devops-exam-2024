@@ -1,9 +1,9 @@
 // TODO: Refactor validation function to follow the defined validations rules
 const isValid = (gamertag) => {
-    if(atLeast8Characters(gamertag) && atLeastOneSpecialCharacter(gamertag) && atLeastOneNumber(gamertag)) {
-        return true;
-    }
-    return false;
+    if(!atLeast8Characters(gamertag)) return 'Invalid - gamertag length must be at least 8 characters'
+    if(!atLeastOneSpecialCharacter(gamertag)) return 'Invalid - gamertag must contain at least a special character'
+    if(!atLeastOneNumber(gamertag)) return 'Invalid - gamertag must contain at least a number'
+    return 'Gamer tag is valid';
 };
 
 function atLeast8Characters(gamertag) {
