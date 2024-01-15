@@ -40,12 +40,10 @@ try {
         const validationResult = isValid(gamerTagValue);
         // TODO : Define the correct error message regarding the validation rules
         feedbackMessage.textContent = validationResult
-            ? 'Gamer tag is not valid'
-            : 'Gamer tag is valid';
         // ----------------------------------------------------------------------
         body.setAttribute(
             'style',
-            validationResult ? greenBackgroundColor : redBackgroundColor
+            validationResult === 'Gamer tag is valid' ? greenBackgroundColor : redBackgroundColor
         );
     });
 
