@@ -1,0 +1,38 @@
+name: Hajar Haouat
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout du code
+        uses: actions/checkout@v3
+
+      - name: Node.js installation
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm i
+
+      - name: Formatting Prettier
+        run: npm run prettier
+
+      - name: Formatting Lint
+        run: npm run lint
+
+      - name: Test and coverage with Jest
+        run: npm run test && npm run test:coverage
+
+      - name: Build
+        run: npm run build
+
+      - name: Success message
+        run: echo "PIPELINE SUCCESS WITHOUT ERRORS"
